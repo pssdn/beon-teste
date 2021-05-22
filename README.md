@@ -22,6 +22,8 @@ npm install
 docker compose up -d
 ```
 
+Por padrão o Redis roda na porta 6379. Caso seja alterado esse padrão, o [serverless.yml](serverless.yml) deve ser atualizado na linha 14 (_environment -> REDIS_URL_) com a nova URL para o acesso ao serviço.
+
 ### Inicialização
 
 ```shell
@@ -37,6 +39,8 @@ Estágio padrão do sistema é como _Development_, logo, a assinatura das rodas 
 Inserir nova tarefa.
 
 - Parâmetros
+
+  Os parâmetro devem ser enviados seguindo o formato `JSON`.
 
   - `name`: Nome da tarefa.
 
@@ -136,7 +140,7 @@ Atualizar uma tarefa.
 
   - `:id`: Identificador único para cada tarefa.
 
-  Todos os parâmetros abaixo são opcionais.
+  Todos os parâmetros abaixo são opcionais.<br>Os parâmetro devem ser enviados seguindo o formato `JSON`.
 
   - `name`: Nome da tarefa.
 
