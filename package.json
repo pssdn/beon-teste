@@ -1,0 +1,24 @@
+{
+  "name": "beon-teste",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "serverless offline"
+  },
+  "author": "vkunssec",
+  "license": "MIT",
+  "devDependencies": {
+    "serverless-bundle": "^4.3.1",
+    "serverless-offline": "^7.0.0"
+  },
+  "dependencies": {
+    "@middy/core": "^2.2.0",
+    "@middy/http-cors": "^2.2.0",
+    "@middy/http-error-handler": "^2.2.0",
+    "@middy/http-event-normalizer": "^2.2.0",
+    "@middy/http-json-body-parser": "^2.2.0",
+    "http-errors": "^1.8.0",
+    "redis": "^3.1.2",
+    "uuid": "^8.3.2"
+  }
+}

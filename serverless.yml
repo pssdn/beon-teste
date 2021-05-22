@@ -1,0 +1,59 @@
+service: beon-teste
+
+frameworkVersion: "2"
+
+plugins:
+  - serverless-offline
+  - serverless-bundle
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: ${opt:stage, 'dev'}
+  environment:
+    REDIS_URL: "redis://127.0.0.1:6379"
+
+functions:
+  createTask:
+    handler: src/handlers/createTask.handler
+    events:
+      - http:
+          method: POST
+          path: /task
+          cors: true
+
+  getTasks:
+    handler: src/handlers/getTasks.handler
+    events:
+      - http:
+          method: GET
+          path: /tasks
+          cors: true
+
+  getTask:
+    handler: src/handlers/getTask.handler
+    events:
+      - http:
+          method: GET
+          path: /task/{id}
+          cors: true
+
+  updateTask:
+    handler: src/handlers/updateTask.handler
+    events:
+      - http:
+          method: PATCH
+          path: /task/{id}
+          cors: true
+
+  removeTask:
+    handler: src/handlers/removeTask.handler
+    events:
+      - http:
+          method: DELETE
+          path: /task/{id}
+          cors: true
+
+custom:
+  bundle:
+    linting: false
